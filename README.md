@@ -125,3 +125,91 @@ Back in windows-vm observed that ICMP traffic from linux-vm timed out (linux VM 
 <p>
 Deleted firewall rule and observed requests got picked back up again (Step-13)
 </p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/HgrSkY7.png"
+</p>
+<p>
+Connected to linux machine inside windows vm using ssh within powershell (with username and linux vm private IP address) and obeserved SSH traffic (Step-14)
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/7m7jtVd.png"
+</p>
+<p>
+Notice how prompt changed because we were now connected to linux vm (Step-15)
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/XDRE4Gt.png"
+</p>
+<p>
+Obeserved the hostname (says linux VM while using windows) (Step-16)
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/7PvQsHS.png"
+</p>
+<p>
+Because we were using SSH we noticed that packets were encrypted (not telnet or cleartext) (Step-17)
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/ejjXNZZ.png"
+</p>
+<p>
+Observed SSH uses TCP port 22 to communicate (can use tcp.port==22 to filter traffic as well) (Step-18)
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/usmOZgr.png"
+</p>
+<p>
+Next we dropped the SSH connection by typing exit (Step-19)
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/xA8QvpJ.png"
+</p>
+<p>
+Looked at the RST (reset package) that was sent which just kills the connection (Step-20)
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/jS1Zvej.png"
+</p>
+<p>
+Renewed Ip address and filtered for DHCP traffic only (Step-21)
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/xilYttj.png"
+</p>
+<p>
+Again observed new DHCP traffic (Step-22)
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/LTI5uyh.png"
+</p>
+<p>
+Looked at destination IP address (255.255.etc) which means broadcast (Step-23)
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/E1yKPcg.png"
+</p>
+<p>
+Lastly observed DNS and RDP traffic and cleaned up the lab (Step-24)
+</p>
